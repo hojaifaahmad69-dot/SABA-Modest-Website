@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product — SABA Modest</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="header">
+  <a class="logo" href="index.html">SABA<small>MODEST</small></a>
+  <a class="back" href="index.html#collection">← BACK TO COLLECTION</a>
+</header>
+<main>
+<section class="product-detail" id="productDetails"></section>
+</main>
+<footer>
+  <p>© 2026 SABA Modest — Where Modest Meets Elegance</p>
+  <div class="social" id="productSocial"></div>
+</footer>
+<script src="js/settings.js"></script>
+<script src="js/products.js"></script>
+<script>
+const id = new URLSearchParams(location.search).get('id');
+const product = products.find(p => p.id === id);
+const box = document.getElementById('productDetails');
+if (!product) {
+  box.innerHTML = '<div class="not-found"><h1>Product not found</h1><a class="shop-btn" href="index.html#collection">BACK TO COLLECTION</a></div>';
+} else {
+  const order = product.stock
+    ? `<a class="shop-btn" href="${siteSettings.messenger}" target="_blank" rel="noopener">ORDER VIA MESSENGER →</a>`
+    : `<span class="sold large">SOLD OUT</span>`;
+  box.innerHTML = `
+    <div class="detail-photo"><img src="${product.image}" alt="${product.name}"></div>
+    <div class="detail-copy">
+      <div class="tag">SABA MODEST • COLLECTION</div>
+      <h1>${product.name}</h1>
+      <div class="detail-price">৳ ${product.price}</div>
+      <p>${product.description}</p>
+      <div class="specs">
+        <div><strong>Fabric</strong><span>${product.fabric}</span></div>
+        <div><strong>Colour</strong><span>${product.color}</span></div>
+        <div><strong>Status</strong><span>${product.stock ? 'Available' : 'Sold Out'}</span></div>
+      </div>
+      ${order}
+    </div>`;
+}
+</script>
+<script>
+const productSocial = `
+<a class="social-link" href="${siteSettings.facebook}" target="_blank" rel="noopener"><span class="social-icon facebook-icon">f</span><span>Facebook</span></a>
+<a class="social-link" href="${siteSettings.instagram}" target="_blank" rel="noopener"><span class="social-icon instagram-icon">◎</span><span>Instagram</span></a>
+<a class="social-link" href="${siteSettings.whatsapp}" target="_blank" rel="noopener"><span class="social-icon whatsapp-icon">◔</span><span>WhatsApp</span></a>
+<a class="social-link" href="${siteSettings.messenger}" target="_blank" rel="noopener"><span class="social-icon messenger-icon">⌁</span><span>Messenger</span></a>`;
+document.getElementById('productSocial').innerHTML = productSocial;
+</script>
+</body>
+</html>

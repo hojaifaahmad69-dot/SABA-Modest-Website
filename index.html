@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SABA Modest — Where Modest Meets Elegance</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="header">
+  <a class="logo" href="index.html">SABA<small>MODEST</small></a>
+  <nav class="nav">
+    <a href="#home">HOME</a>
+    <a href="#collection">COLLECTION</a>
+    <a href="#about">ABOUT</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+  <div class="header-social" id="headerSocial"></div>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="hero-copy">
+    <div class="tag">SABA MODEST • NEW COLLECTION</div>
+    <h1>MODEST<br><span>MEETS</span><br>ELEGANCE.</h1>
+    <p>Thoughtfully selected modest wear made for comfort, confidence and timeless everyday elegance.</p>
+    <a class="shop-btn" href="#collection">SHOP COLLECTION →</a>
+  </div>
+  <div class="hero-art"></div>
+</section>
+
+<div class="brands">
+  <span>SABA</span><span>MODEST</span><span>✦ ELEGANT</span><span>REFINED</span><span>COMFORT</span>
+</div>
+
+<section class="section" id="collection">
+  <div class="section-head">
+    <h2>NEW <span>ARRIVALS</span></h2>
+    <a class="view" href="#collection">VIEW ALL →</a>
+  </div>
+  <div class="products">
+    <article class="card">
+      <a class="photo" href="product.html?id=saba-001"><img src="images/product-1.jpg" alt="Elegant Three-Piece"></a>
+      <div class="card-info">
+        <h3>Elegant Three-Piece</h3><p>Premium Fabric • Deep Green</p><p class="price">৳ 2,490</p>
+        <a class="order" href="product.html?id=saba-001">VIEW DETAILS →</a>
+      </div>
+    </article>
+    <article class="card">
+      <a class="photo" href="product.html?id=saba-002"><img src="images/product-2.jpg" alt="Classic Modest Set"></a>
+      <div class="card-info">
+        <h3>Classic Modest Set</h3><p>Soft Fabric • Black</p><p class="price">৳ 2,650</p>
+        <a class="order" href="product.html?id=saba-002">VIEW DETAILS →</a>
+      </div>
+    </article>
+    <article class="card">
+      <a class="photo" href="product.html?id=saba-003"><img src="images/product-3.jpg" alt="Grace Collection"></a>
+      <div class="card-info">
+        <h3>Grace Collection</h3><p>Premium Fabric • Maroon</p><p class="price">৳ 2,850</p>
+        <span class="sold">SOLD OUT</span>
+      </div>
+    </article>
+    <article class="card">
+      <a class="photo" href="product.html?id=saba-004"><img src="images/product-4.jpg" alt="Rose Print Collection"></a>
+      <div class="card-info">
+        <h3>Rose Print Collection</h3><p>Selected Fabric • Elegant Finish</p><p class="price">৳ 2,750</p>
+        <a class="order" href="product.html?id=saba-004">VIEW DETAILS →</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <h2>Where Modest Meets Elegance</h2>
+  <p>At SABA Modest, we believe clothing should feel as beautiful as it looks. Every piece is carefully selected with attention to fabric, comfort, design and everyday practicality.</p>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div>
+      <div class="tag">STAY CONNECTED</div>
+      <h2>Follow SABA Modest</h2>
+      <p>See new arrivals, updates and selected pieces through our social pages.</p>
+    </div>
+    <div class="social" id="socialLinks"></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p>© 2026 SABA Modest — Where Modest Meets Elegance</p>
+  <div class="social" id="footerSocial"></div>
+</footer>
+
+<script src="js/settings.js"></script>
+<script>
+const iconLinks = `
+<a class="social-link" href="${siteSettings.facebook}" target="_blank" rel="noopener" aria-label="Facebook"><span class="social-icon facebook-icon">f</span><span>Facebook</span></a>
+<a class="social-link" href="${siteSettings.instagram}" target="_blank" rel="noopener" aria-label="Instagram"><span class="social-icon instagram-icon">◎</span><span>Instagram</span></a>
+<a class="social-link" href="${siteSettings.whatsapp}" target="_blank" rel="noopener" aria-label="WhatsApp"><span class="social-icon whatsapp-icon">◔</span><span>WhatsApp</span></a>
+<a class="social-link" href="${siteSettings.messenger}" target="_blank" rel="noopener" aria-label="Messenger"><span class="social-icon messenger-icon">⌁</span><span>Messenger</span></a>`;
+document.getElementById('headerSocial').innerHTML = iconLinks;
+document.getElementById('socialLinks').innerHTML = iconLinks;
+document.getElementById('footerSocial').innerHTML = iconLinks;
+</script>
+</body>
+</html>
