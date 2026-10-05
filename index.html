@@ -8,7 +8,9 @@
 </head>
 <body>
 <header class="header">
-  <a class="logo" href="index.html">SABA<small>MODEST</small></a>
+ <a class="logo" href="index.html">
+  <img src="images/logo.png" alt="SABA Modest">
+</a>
   <nav class="nav">
     <a href="#home">HOME</a>
     <a href="#collection">COLLECTION</a>
@@ -38,36 +40,7 @@
     <h2>NEW <span>ARRIVALS</span></h2>
     <a class="view" href="#collection">VIEW ALL →</a>
   </div>
-  <div class="products">
-    <article class="card">
-      <a class="photo" href="product.html?id=saba-001"><img src="images/product-1.jpg" alt="Elegant Three-Piece"></a>
-      <div class="card-info">
-        <h3>Elegant Three-Piece</h3><p>Premium Fabric • Deep Green</p><p class="price">৳ 2,490</p>
-        <a class="order" href="product.html?id=saba-001">VIEW DETAILS →</a>
-      </div>
-    </article>
-    <article class="card">
-      <a class="photo" href="product.html?id=saba-002"><img src="images/product-2.jpg" alt="Classic Modest Set"></a>
-      <div class="card-info">
-        <h3>Classic Modest Set</h3><p>Soft Fabric • Black</p><p class="price">৳ 2,650</p>
-        <a class="order" href="product.html?id=saba-002">VIEW DETAILS →</a>
-      </div>
-    </article>
-    <article class="card">
-      <a class="photo" href="product.html?id=saba-003"><img src="images/product-3.jpg" alt="Grace Collection"></a>
-      <div class="card-info">
-        <h3>Grace Collection</h3><p>Premium Fabric • Maroon</p><p class="price">৳ 2,850</p>
-        <span class="sold">SOLD OUT</span>
-      </div>
-    </article>
-    <article class="card">
-      <a class="photo" href="product.html?id=saba-004"><img src="images/product-4.jpg" alt="Rose Print Collection"></a>
-      <div class="card-info">
-        <h3>Rose Print Collection</h3><p>Selected Fabric • Elegant Finish</p><p class="price">৳ 2,750</p>
-        <a class="order" href="product.html?id=saba-004">VIEW DETAILS →</a>
-      </div>
-    </article>
-  </div>
+  <div class="products" id="productGrid"></div>
 </section>
 
 <section class="about" id="about">
@@ -93,6 +66,37 @@
 </footer>
 
 <script src="js/settings.js"></script>
+<script src="js/products.js"></script>
+
+<script>
+const productGrid = document.getElementById('productGrid');
+
+products.forEach(product => {
+
+  const card = document.createElement('article');
+  card.className = 'card';
+
+  card.innerHTML = `
+    <a class="photo" href="product.html?id=${product.id}">
+      <img src="${product.image}" alt="${product.name}">
+    </a>
+
+    <div class="card-info">
+      <h3>${product.name}</h3>
+      <p>${product.fabric} • ${product.color}</p>
+      <p class="price">৳ ${product.price}</p>
+
+      ${
+        product.stock
+        ? `<a class="order" href="product.html?id=${product.id}">VIEW DETAILS →</a>`
+        : `<span class="sold">SOLD OUT</span>`
+      }
+    </div>
+  `;
+
+  productGrid.appendChild(card);
+});
+</script>
 <script>
 const iconLinks = `
 <a class="social-link" href="${siteSettings.facebook}" target="_blank" rel="noopener" aria-label="Facebook"><span class="social-icon facebook-icon">f</span><span>Facebook</span></a>
