@@ -1,7 +1,7 @@
 // SABA MODEST - Add your real links here later
 const siteSettings = {
-  facebook: "YOUR_FACEBOOK_PAGE_LINK",
-  whatsapp: "YOUR_WHATSAPP_LINK",
+  facebook: "https://www.facebook.com/share/1FGtgznWuU/",
+  whatsapp: "https://wa.me/8801788477280",
   instagram: "YOUR_INSTAGRAM_LINK",
-  messenger: "YOUR_MESSENGER_LINK"
+  messenger: "https://m.me/SABAmodest1815"
 };
