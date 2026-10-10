@@ -10,26 +10,68 @@
 <header class="header">
   <a class="logo" href="index.html">SABA<small>MODEST</small></a>
   <a class="back" href="index.html#collection">← BACK TO COLLECTION</a>
+  <!-- Filled by js/main.js -->
+  <div class="header-social social icon-only" id="productHeaderSocial"></div>
 </header>
+
 <main>
 <section class="product-detail" id="productDetails"></section>
 </main>
-<footer>
-  <p>© 2026 SABA Modest — Where Modest Meets Elegance</p>
-  <div class="social" id="productSocial"></div>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h3>SABA Modest</h3>
+      <p>At SABA Modest, we believe clothing should feel as beautiful as it looks. Every piece is carefully selected with attention to fabric, comfort, design and everyday practicality.</p>
+      <!-- Filled by js/main.js from js/settings.js -->
+      <div class="social icon-only footer-social" id="footerSocial"></div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Quick links</h3>
+      <ul>
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#collection">Collection</a></li>
+        <li><a href="index.html#about">About us</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Contact</h3>
+      <!-- Replace the phone placeholder with your real number -->
+      <ul>
+        <li>Khulna, Bangladesh</li>
+        <li>+880 1XXX-XXXXXX</li>
+        <li>hello@sabamodest.com</li>
+        <li>Every day, 10am to 9pm</li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Order</h3>
+      <p>Pick a product and order with one tap on Messenger. No cart, no payment forms.</p>
+      <!-- Link is set by js/main.js from siteSettings.messenger -->
+      <a class="shop-btn footer-order-btn" id="footerMessenger" hidden>MESSAGE US</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 SABA Modest — Where Modest Meets Elegance</div>
 </footer>
+
 <script src="js/settings.js"></script>
 <script src="js/products.js"></script>
 <script>
 const id = new URLSearchParams(location.search).get('id');
 const product = products.find(p => p.id === id);
 const box = document.getElementById('productDetails');
+
 if (!product) {
   box.innerHTML = '<div class="not-found"><h1>Product not found</h1><a class="shop-btn" href="index.html#collection">BACK TO COLLECTION</a></div>';
 } else {
   const order = product.stock
     ? `<a class="shop-btn" href="${siteSettings.messenger}" target="_blank" rel="noopener">ORDER VIA MESSENGER →</a>`
     : `<span class="sold large">SOLD OUT</span>`;
+
   box.innerHTML = `
     <div class="detail-photo"><img src="${product.image}" alt="${product.name}"></div>
     <div class="detail-copy">
@@ -46,13 +88,6 @@ if (!product) {
     </div>`;
 }
 </script>
-<script>
-const productSocial = `
-<a class="social-link" href="${siteSettings.facebook}" target="_blank" rel="noopener"><span class="social-icon facebook-icon">f</span><span>Facebook</span></a>
-<a class="social-link" href="${siteSettings.instagram}" target="_blank" rel="noopener"><span class="social-icon instagram-icon">◎</span><span>Instagram</span></a>
-<a class="social-link" href="${siteSettings.whatsapp}" target="_blank" rel="noopener"><span class="social-icon whatsapp-icon">◔</span><span>WhatsApp</span></a>
-<a class="social-link" href="${siteSettings.messenger}" target="_blank" rel="noopener"><span class="social-icon messenger-icon">⌁</span><span>Messenger</span></a>`;
-document.getElementById('productSocial').innerHTML = productSocial;
-</script>
+<script src="js/main.js"></script>
 </body>
 </html>

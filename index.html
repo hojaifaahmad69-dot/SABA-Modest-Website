@@ -3,39 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SABA Modest — thoughtfully selected modest wear made for comfort, confidence and everyday elegance.">
 <title>SABA Modest — Where Modest Meets Elegance</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<a class="skip-link" href="#home">Skip to content</a>
+
 <header class="header">
- <a class="logo" href="index.html">
-  <img src="images/logo.png" alt="SABA Modest">
-</a>
-  <nav class="nav">
+  <a class="logo" href="index.html">
+    <img src="images/logo.png" alt="SABA Modest">
+  </a>
+
+  <nav class="nav" aria-label="Main">
     <a href="#home">HOME</a>
     <a href="#collection">COLLECTION</a>
     <a href="#about">ABOUT</a>
     <a href="#contact">CONTACT</a>
   </nav>
-  <div class="header-social" id="headerSocial"></div>
+
+  <!-- Filled by js/main.js from js/settings.js -->
+  <div class="header-social social icon-only" id="headerSocial"></div>
 </header>
 
 <main id="home">
+
+<!-- ========== HERO (full-width banner) ========== -->
 <section class="hero">
+  <div class="hero-art" role="img" aria-label="SABA Modest clothing collection"></div>
   <div class="hero-copy">
     <div class="tag">SABA MODEST • NEW COLLECTION</div>
     <h1>MODEST<br><span>MEETS</span><br>ELEGANCE.</h1>
     <p>Thoughtfully selected modest wear made for comfort, confidence and timeless everyday elegance.</p>
     <a class="shop-btn" href="#collection">SHOP COLLECTION →</a>
   </div>
-  <div class="hero-art"></div>
 </section>
 
+<!-- ========== HOT DEALS (slides are edited in js/offers.js) ========== -->
+<section class="deals reveal" id="deals" aria-labelledby="dealsTitle">
+  <div class="deals-head">
+    <div class="tag">SPECIAL OFFERS</div>
+    <h2 id="dealsTitle">HOT <span>DEALS</span></h2>
+  </div>
+
+  <div class="deals-slider" id="dealsSlider" role="region" aria-roledescription="carousel" aria-label="Hot deals">
+    <div class="deals-track" id="dealsTrack"></div>
+    <button type="button" class="deals-arrow deals-prev" id="dealsPrev" aria-label="Previous offer">&#8249;</button>
+    <button type="button" class="deals-arrow deals-next" id="dealsNext" aria-label="Next offer">&#8250;</button>
+  </div>
+
+  <div class="deals-controls" id="dealsControls">
+    <div class="deals-dots" id="dealsDots"></div>
+    <button type="button" class="deals-toggle" id="dealsToggle">Pause</button>
+  </div>
+</section>
+
+<!-- ========== BRAND MARQUEE ========== -->
 <div class="brands">
-  <span>SABA</span><span>MODEST</span><span>✦ ELEGANT</span><span>REFINED</span><span>COMFORT</span>
+  <div class="brands-track">
+    <div class="brands-group">
+      <span>SABA</span><span>MODEST</span><span>✦ ELEGANT</span><span>REFINED</span><span>COMFORT</span>
+    </div>
+    <div class="brands-group" aria-hidden="true">
+      <span>SABA</span><span>MODEST</span><span>✦ ELEGANT</span><span>REFINED</span><span>COMFORT</span>
+    </div>
+  </div>
 </div>
 
-<section class="section" id="collection">
+<!-- ========== COLLECTION ========== -->
+<section class="section reveal" id="collection">
   <div class="section-head">
     <h2>NEW <span>ARRIVALS</span></h2>
     <a class="view" href="#collection">VIEW ALL →</a>
@@ -43,42 +79,84 @@
   <div class="products" id="productGrid"></div>
 </section>
 
-<section class="about" id="about">
+<!-- ========== ABOUT ========== -->
+<section class="about reveal" id="about">
   <h2>Where Modest Meets Elegance</h2>
   <p>At SABA Modest, we believe clothing should feel as beautiful as it looks. Every piece is carefully selected with attention to fabric, comfort, design and everyday practicality.</p>
 </section>
 
-<section class="contact" id="contact">
+<!-- ========== STAY WITH SABA MODEST ========== -->
+<section class="contact reveal" id="contact">
   <div class="contact-inner">
-    <div>
-      <div class="tag">STAY CONNECTED</div>
+    <div class="contact-copy">
+      <div class="tag">STAY WITH SABA MODEST</div>
       <h2>Follow SABA Modest</h2>
       <p>See new arrivals, updates and selected pieces through our social pages.</p>
     </div>
-    <div class="social" id="socialLinks"></div>
+    <div class="contact-actions">
+      <!-- Hidden until js/settings.js has a real Facebook URL -->
+      <a class="shop-btn fb-follow" id="facebookFollow" hidden>FOLLOW US ON FACEBOOK →</a>
+      <div class="social" id="socialLinks"></div>
+    </div>
   </div>
 </section>
+
 </main>
 
-<footer>
-  <p>© 2026 SABA Modest — Where Modest Meets Elegance</p>
-  <div class="social" id="footerSocial"></div>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h3>SABA Modest</h3>
+      <p>At SABA Modest, we believe clothing should feel as beautiful as it looks. Every piece is carefully selected with attention to fabric, comfort, design and everyday practicality.</p>
+      <!-- Filled by js/main.js from js/settings.js -->
+      <div class="social icon-only footer-social" id="footerSocial"></div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Quick links</h3>
+      <ul>
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#collection">Collection</a></li>
+        <li><a href="index.html#about">About us</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Contact</h3>
+      <!-- Replace the phone placeholder with your real number -->
+      <ul>
+        <li>Khulna, Bangladesh</li>
+        <li>+880 1XXX-XXXXXX</li>
+        <li>hello@sabamodest.com</li>
+        <li>Every day, 10am to 9pm</li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Order</h3>
+      <p>Pick a product and order with one tap on Messenger. No cart, no payment forms.</p>
+      <!-- Link is set by js/main.js from siteSettings.messenger -->
+      <a class="shop-btn footer-order-btn" id="footerMessenger" hidden>MESSAGE US</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 SABA Modest — Where Modest Meets Elegance</div>
 </footer>
 
 <script src="js/settings.js"></script>
 <script src="js/products.js"></script>
 
 <script>
+// Product cards (uses the products list from js/products.js)
 const productGrid = document.getElementById('productGrid');
 
 products.forEach(product => {
-
   const card = document.createElement('article');
-  card.className = 'card';
+  card.className = 'card reveal';
 
   card.innerHTML = `
     <a class="photo" href="product.html?id=${product.id}">
-      <img src="${product.image}" alt="${product.name}">
+      <img src="${product.image}" alt="${product.name}" loading="lazy" decoding="async">
     </a>
 
     <div class="card-info">
@@ -97,15 +175,8 @@ products.forEach(product => {
   productGrid.appendChild(card);
 });
 </script>
-<script>
-const iconLinks = `
-<a class="social-link" href="${siteSettings.facebook}" target="_blank" rel="noopener" aria-label="Facebook"><span class="social-icon facebook-icon">f</span><span>Facebook</span></a>
-<a class="social-link" href="${siteSettings.instagram}" target="_blank" rel="noopener" aria-label="Instagram"><span class="social-icon instagram-icon">◎</span><span>Instagram</span></a>
-<a class="social-link" href="${siteSettings.whatsapp}" target="_blank" rel="noopener" aria-label="WhatsApp"><span class="social-icon whatsapp-icon">◔</span><span>WhatsApp</span></a>
-<a class="social-link" href="${siteSettings.messenger}" target="_blank" rel="noopener" aria-label="Messenger"><span class="social-icon messenger-icon">⌁</span><span>Messenger</span></a>`;
-document.getElementById('headerSocial').innerHTML = iconLinks;
-document.getElementById('socialLinks').innerHTML = iconLinks;
-document.getElementById('footerSocial').innerHTML = iconLinks;
-</script>
+
+<script src="js/offers.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
